@@ -1,0 +1,94 @@
+@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+:root {
+  --bg: #050d1a;
+  --surface: #0b1629;
+  --surface2: #111f35;
+  --border: #1a2d4a;
+  --accent: #00c2ff;
+  --accent2: #0077ff;
+  --success: #00e676;
+  --warning: #ffab40;
+  --danger: #ff5252;
+  --text: #e8f4fd;
+  --text-muted: #6a8aaa;
+  --glow: 0 0 40px rgba(0, 194, 255, 0.15);
+  --font-display: 'Syne', sans-serif;
+  --font-body: 'DM Sans', sans-serif;
+}
+
+html, body { height: 100%; }
+
+body {
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--font-body);
+  font-size: 15px;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: var(--accent); text-decoration: none; }
+
+input, select, textarea {
+  font-family: var(--font-body);
+  background: var(--surface2);
+  border: 1px solid var(--border);
+  color: var(--text);
+  border-radius: 10px;
+  padding: 12px 16px;
+  width: 100%;
+  font-size: 14px;
+  outline: none;
+  transition: border-color 0.2s, box-shadow 0.2s;
+}
+input:focus, select:focus {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.1);
+}
+input::placeholder { color: var(--text-muted); }
+
+button {
+  font-family: var(--font-display);
+  cursor: pointer;
+  border: none;
+  outline: none;
+  border-radius: 10px;
+  font-weight: 600;
+  transition: all 0.2s;
+}
+button:disabled { opacity: 0.5; cursor: not-allowed; }
+
+.btn-primary {
+  background: linear-gradient(135deg, var(--accent2), var(--accent));
+  color: #fff;
+  padding: 14px 32px;
+  font-size: 15px;
+  letter-spacing: 0.03em;
+  width: 100%;
+}
+.btn-primary:hover:not(:disabled) {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 24px rgba(0, 194, 255, 0.3);
+}
+
+.card {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 16px;
+  padding: 32px;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(16px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+.animate-in { animation: fadeIn 0.5s ease forwards; }
+
+@keyframes pulse {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0.4; }
+}
+.pulse { animation: pulse 1.5s ease infinite; }

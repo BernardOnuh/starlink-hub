@@ -1,0 +1,231 @@
+.main {
+  min-height: 100vh;
+  position: relative;
+  overflow: hidden;
+}
+
+.bg {
+  position: fixed;
+  inset: 0;
+  z-index: 0;
+  pointer-events: none;
+}
+
+.orb1 {
+  position: absolute;
+  top: -200px;
+  left: -200px;
+  width: 600px;
+  height: 600px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 119, 255, 0.18) 0%, transparent 70%);
+}
+
+.orb2 {
+  position: absolute;
+  bottom: -150px;
+  right: -100px;
+  width: 500px;
+  height: 500px;
+  border-radius: 50%;
+  background: radial-gradient(circle, rgba(0, 194, 255, 0.12) 0%, transparent 70%);
+}
+
+.grid {
+  position: absolute;
+  inset: 0;
+  background-image:
+    linear-gradient(rgba(0, 194, 255, 0.04) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(0, 194, 255, 0.04) 1px, transparent 1px);
+  background-size: 60px 60px;
+}
+
+.container {
+  position: relative;
+  z-index: 1;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 24px;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  padding: 28px 0;
+}
+
+.logo {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.logoIcon {
+  font-size: 28px;
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px var(--accent));
+}
+
+.logoText {
+  font-family: var(--font-display);
+  font-size: 20px;
+  font-weight: 700;
+  color: var(--text);
+  letter-spacing: -0.02em;
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 64px;
+  align-items: center;
+  min-height: calc(100vh - 100px);
+  padding: 40px 0 60px;
+}
+
+@media (max-width: 768px) {
+  .content {
+    grid-template-columns: 1fr;
+    gap: 40px;
+    padding: 20px 0 40px;
+  }
+}
+
+.left { display: flex; flex-direction: column; gap: 28px; }
+
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  background: rgba(0, 194, 255, 0.1);
+  border: 1px solid rgba(0, 194, 255, 0.25);
+  color: var(--accent);
+  padding: 6px 16px;
+  border-radius: 100px;
+  font-size: 13px;
+  font-weight: 500;
+  width: fit-content;
+  animation: fadeIn 0.4s ease;
+}
+
+.headline {
+  font-family: var(--font-display);
+  font-size: clamp(36px, 5vw, 56px);
+  font-weight: 800;
+  line-height: 1.1;
+  letter-spacing: -0.03em;
+  animation: fadeIn 0.5s ease 0.1s both;
+}
+
+.accent {
+  background: linear-gradient(135deg, var(--accent), var(--accent2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+.subtext {
+  color: var(--text-muted);
+  font-size: 16px;
+  line-height: 1.7;
+  max-width: 440px;
+  animation: fadeIn 0.5s ease 0.2s both;
+}
+
+.features {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 12px;
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.feature {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  padding: 12px 16px;
+  font-size: 13px;
+  font-weight: 500;
+}
+
+.featureIcon { font-size: 18px; }
+
+.amount {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  animation: fadeIn 0.5s ease 0.4s both;
+}
+
+.amountLabel {
+  font-size: 13px;
+  color: var(--text-muted);
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+}
+
+.amountValue {
+  font-family: var(--font-display);
+  font-size: 40px;
+  font-weight: 800;
+  color: var(--accent);
+  filter: drop-shadow(0 0 12px rgba(0, 194, 255, 0.4));
+}
+
+/* Form */
+.right { animation: fadeIn 0.6s ease 0.2s both; }
+
+.formCard {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: 20px;
+  padding: 36px;
+  box-shadow: var(--glow);
+}
+
+.formTitle {
+  font-family: var(--font-display);
+  font-size: 22px;
+  font-weight: 700;
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.formSubtitle {
+  color: var(--text-muted);
+  font-size: 14px;
+  margin-bottom: 28px;
+}
+
+.formGroup { margin-bottom: 18px; }
+
+.label {
+  display: block;
+  font-size: 13px;
+  font-weight: 500;
+  color: var(--text-muted);
+  margin-bottom: 8px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+}
+
+.error {
+  background: rgba(255, 82, 82, 0.1);
+  border: 1px solid rgba(255, 82, 82, 0.3);
+  color: var(--danger);
+  border-radius: 8px;
+  padding: 10px 14px;
+  font-size: 13px;
+  margin-bottom: 16px;
+}
+
+.secureNote {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 16px;
+}
