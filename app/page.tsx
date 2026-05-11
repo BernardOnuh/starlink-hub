@@ -81,7 +81,7 @@ export default function Home() {
 
             <div className={styles.amount}>
               <span className={styles.amountLabel}>One-time fee</span>
-              <span className={styles.amountValue}>₦5,000</span>
+              <span className={styles.amountValue}>₦7,000</span>
             </div>
           </div>
 
@@ -123,7 +123,7 @@ export default function Home() {
               {error && <p className={styles.error}>{error}</p>}
 
               <button className="btn-primary" onClick={handleSubmit} disabled={loading}>
-                {loading ? "Redirecting to payment..." : "Pay ₦5,000 →"}
+                {loading ? "Redirecting to payment..." : "Pay ₦7,000 →"}
               </button>
 
               <p className={styles.secureNote}>
