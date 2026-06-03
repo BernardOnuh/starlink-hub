@@ -2,11 +2,19 @@
 import { useState, useEffect } from "react";
 import styles from "./page.module.css";
 
+interface TimeLeft {
+  days?: number;
+  hours?: number;
+  minutes?: number;
+  text: string;
+  expired: boolean;
+}
+
 export default function Home() {
   const [form, setForm] = useState({ customerName: "", customerEmail: "", customerPhone: "" });
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
-  const [timeLeft, setTimeLeft] = useState({});
+  const [timeLeft, setTimeLeft] = useState<TimeLeft>({ text: "", expired: false });
   const [currentPrice, setCurrentPrice] = useState(5000);
   const [isPriceIncreased, setIsPriceIncreased] = useState(false);
 
