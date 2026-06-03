@@ -19,7 +19,7 @@ const PaymentSchema = new Schema<IPayment>(
     customerName: { type: String, required: true },
     customerEmail: { type: String, required: true },
     customerPhone: { type: String, required: true },
-    amount: { type: Number, required: true, default: 7000 },
+    amount: { type: Number, required: true, default: 5000 },
     status: {
       type: String,
       enum: ["pending", "paid", "failed"],
