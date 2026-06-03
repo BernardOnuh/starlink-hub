@@ -1,34 +1,8 @@
 /* ─────────────────────────────────────────────
-   IMPORTS — Futuristic typography stack
-   Bebas Neue: bold display / headlines
-   Outfit: clean geometric body
-   Share Tech Mono: monospace digits / data
+   page.module.css
+   NOTE: @import, :root tokens, and * reset
+   must live in globals.css — see globals-additions.css
    ───────────────────────────────────────────── */
-@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
-
-/* ─── TOKENS ────────────────────────────────── */
-:root {
-  --bg: #030a14;
-  --surface: rgba(8, 20, 38, 0.85);
-  --surface-hover: rgba(0, 180, 255, 0.06);
-  --border: rgba(0, 180, 255, 0.14);
-  --border-bright: rgba(0, 200, 255, 0.45);
-  --accent: #00c8ff;
-  --accent2: #0070ff;
-  --accent-warm: #ff6b35;
-  --accent-warm2: #ffb400;
-  --text: #e8f4ff;
-  --text-muted: rgba(180, 210, 240, 0.55);
-  --text-dim: rgba(100, 150, 200, 0.4);
-  --glow: 0 0 40px rgba(0, 180, 255, 0.12);
-  --glow-strong: 0 0 80px rgba(0, 180, 255, 0.2);
-  --font-display: 'Bebas Neue', 'Impact', sans-serif;
-  --font-body: 'Outfit', system-ui, sans-serif;
-  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
-}
-
-/* ─── RESET / BASE ─────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 .main {
   min-height: 100vh;
