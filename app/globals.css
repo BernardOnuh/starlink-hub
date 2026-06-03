@@ -1,22 +1,29 @@
-@import url('https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Outfit:wght@300;400;500;600;700&family=Share+Tech+Mono&display=swap');
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
 :root {
-  --bg: #050d1a;
-  --surface: #0b1629;
+  --bg: #030a14;
+  --surface: rgba(8, 20, 38, 0.85);
   --surface2: #111f35;
-  --border: #1a2d4a;
-  --accent: #00c2ff;
-  --accent2: #0077ff;
+  --surface-hover: rgba(0, 180, 255, 0.06);
+  --border: rgba(0, 180, 255, 0.14);
+  --border-bright: rgba(0, 200, 255, 0.45);
+  --accent: #00c8ff;
+  --accent2: #0070ff;
+  --accent-warm: #ff6b35;
+  --accent-warm2: #ffb400;
   --success: #00e676;
   --warning: #ffab40;
   --danger: #ff5252;
-  --text: #e8f4fd;
-  --text-muted: #6a8aaa;
-  --glow: 0 0 40px rgba(0, 194, 255, 0.15);
-  --font-display: 'Syne', sans-serif;
-  --font-body: 'DM Sans', sans-serif;
+  --text: #e8f4ff;
+  --text-muted: rgba(180, 210, 240, 0.55);
+  --text-dim: rgba(100, 150, 200, 0.4);
+  --glow: 0 0 40px rgba(0, 180, 255, 0.12);
+  --glow-strong: 0 0 80px rgba(0, 180, 255, 0.2);
+  --font-display: 'Bebas Neue', 'Impact', sans-serif;
+  --font-body: 'Outfit', system-ui, sans-serif;
+  --font-mono: 'Share Tech Mono', 'Courier New', monospace;
 }
 
 html, body { height: 100%; }
@@ -46,7 +53,7 @@ input, select, textarea {
 }
 input:focus, select:focus {
   border-color: var(--accent);
-  box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.1);
+  box-shadow: 0 0 0 3px rgba(0, 200, 255, 0.1);
 }
 input::placeholder { color: var(--text-muted); }
 
@@ -71,7 +78,7 @@ button:disabled { opacity: 0.5; cursor: not-allowed; }
 }
 .btn-primary:hover:not(:disabled) {
   transform: translateY(-1px);
-  box-shadow: 0 8px 24px rgba(0, 194, 255, 0.3);
+  box-shadow: 0 8px 24px rgba(0, 200, 255, 0.3);
 }
 
 .card {
