@@ -91,7 +91,11 @@
   }
 }
 
-.left { display: flex; flex-direction: column; gap: 28px; }
+.left { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 28px; 
+}
 
 .badge {
   display: inline-flex;
@@ -132,6 +136,115 @@
   animation: fadeIn 0.5s ease 0.2s both;
 }
 
+/* NEW: Pricing Timeline */
+.pricingTimeline {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  padding: 20px;
+  background: rgba(0, 194, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.2);
+  border-radius: 14px;
+  animation: fadeIn 0.5s ease 0.3s both;
+}
+
+.timelineItem {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 10px;
+  border-radius: 10px;
+  transition: all 0.3s ease;
+  flex: 1;
+}
+
+.timelineItem.active {
+  background: rgba(0, 194, 255, 0.12);
+  border: 1px solid rgba(0, 194, 255, 0.3);
+  border-radius: 10px;
+}
+
+.timelineIcon {
+  font-size: 24px;
+  flex-shrink: 0;
+}
+
+.timelineContent {
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+}
+
+.timelineLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
+.timelinePrice {
+  font-size: 18px;
+  font-weight: 700;
+  color: var(--accent);
+}
+
+.timelineArrow {
+  font-size: 18px;
+  color: var(--accent);
+  opacity: 0.6;
+  margin: 0 -8px;
+}
+
+/* NEW: Countdown Card */
+.countdownCard {
+  padding: 20px;
+  background: rgba(0, 194, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.2);
+  border-radius: 14px;
+  animation: fadeIn 0.5s ease 0.4s both;
+}
+
+.countdownLabel {
+  font-size: 12px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+  margin-bottom: 14px;
+}
+
+.countdown {
+  display: flex;
+  gap: 12px;
+}
+
+.countdownItem {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 6px;
+  padding: 10px;
+  background: rgba(0, 194, 255, 0.05);
+  border: 1px solid rgba(0, 194, 255, 0.15);
+  border-radius: 10px;
+}
+
+.countdownValue {
+  font-size: 22px;
+  font-weight: 800;
+  color: var(--accent);
+}
+
+.countdownUnit {
+  font-size: 10px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.04em;
+}
+
 .features {
   display: grid;
   grid-template-columns: 1fr 1fr;
@@ -149,9 +262,30 @@
   padding: 12px 16px;
   font-size: 13px;
   font-weight: 500;
+  transition: all 0.3s ease;
 }
 
-.featureIcon { font-size: 18px; }
+.feature:hover {
+  border-color: var(--accent);
+  background: rgba(0, 194, 255, 0.05);
+}
+
+.featureIcon { 
+  font-size: 18px;
+  flex-shrink: 0;
+}
+
+/* NEW: Savings Note */
+.savingsNote {
+  padding: 14px;
+  background: rgba(0, 194, 255, 0.1);
+  border-left: 3px solid var(--accent);
+  border-radius: 8px;
+  color: var(--text);
+  font-size: 13px;
+  font-weight: 500;
+  animation: fadeIn 0.5s ease 0.5s both;
+}
 
 .amount {
   display: flex;
@@ -177,7 +311,9 @@
 }
 
 /* Form */
-.right { animation: fadeIn 0.6s ease 0.2s both; }
+.right { 
+  animation: fadeIn 0.6s ease 0.2s both; 
+}
 
 .formCard {
   background: var(--surface);
@@ -201,7 +337,43 @@
   margin-bottom: 28px;
 }
 
-.formGroup { margin-bottom: 18px; }
+/* NEW: Amount Display Card */
+.amountDisplayCard {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  padding: 16px;
+  background: rgba(0, 194, 255, 0.08);
+  border: 1px solid rgba(0, 194, 255, 0.2);
+  border-radius: 12px;
+  margin-bottom: 24px;
+}
+
+.amountDisplayLabel {
+  font-size: 11px;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  font-weight: 600;
+  letter-spacing: 0.05em;
+}
+
+.amountDisplayValue {
+  font-size: 28px;
+  font-weight: 800;
+  color: var(--accent);
+  filter: drop-shadow(0 0 8px rgba(0, 194, 255, 0.3));
+}
+
+.priceIncreasedNote {
+  font-size: 11px;
+  color: #ff5252;
+  font-weight: 600;
+  margin-top: 4px;
+}
+
+.formGroup { 
+  margin-bottom: 18px; 
+}
 
 .label {
   display: block;
@@ -213,19 +385,204 @@
   letter-spacing: 0.06em;
 }
 
+.input {
+  width: 100%;
+  padding: 12px 14px;
+  background: rgba(0, 194, 255, 0.05);
+  border: 1px solid var(--border);
+  border-radius: 10px;
+  color: var(--text);
+  font-size: 14px;
+  font-family: inherit;
+  transition: all 0.3s ease;
+}
+
+.input::placeholder {
+  color: var(--text-muted);
+}
+
+.input:focus {
+  outline: none;
+  border-color: var(--accent);
+  background: rgba(0, 194, 255, 0.08);
+  box-shadow: 0 0 0 3px rgba(0, 194, 255, 0.1);
+}
+
 .error {
   background: rgba(255, 82, 82, 0.1);
   border: 1px solid rgba(255, 82, 82, 0.3);
-  color: var(--danger);
+  color: #ff5252;
   border-radius: 8px;
   padding: 10px 14px;
   font-size: 13px;
   margin-bottom: 16px;
 }
 
+/* NEW: Submit Button Styles */
+.submitBtn {
+  width: 100%;
+  padding: 12px 20px;
+  border: none;
+  border-radius: 10px;
+  font-size: 14px;
+  font-weight: 700;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  margin-bottom: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  font-family: inherit;
+}
+
+.ctaPrimary {
+  background: linear-gradient(135deg, var(--accent), #00c2ff);
+  color: var(--surface);
+  box-shadow: 0 8px 20px rgba(0, 194, 255, 0.3);
+  border: 1px solid rgba(0, 194, 255, 0.3);
+}
+
+.ctaPrimary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(0, 194, 255, 0.4);
+}
+
+.ctaSecondary {
+  background: linear-gradient(135deg, #ff9500, #ffb600);
+  color: var(--surface);
+  box-shadow: 0 8px 20px rgba(255, 149, 0, 0.3);
+  border: 1px solid rgba(255, 149, 0, 0.3);
+}
+
+.ctaSecondary:hover:not(:disabled) {
+  transform: translateY(-2px);
+  box-shadow: 0 12px 28px rgba(255, 149, 0, 0.4);
+}
+
+.submitBtn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.submitBtn:active:not(:disabled) {
+  transform: translateY(0);
+}
+
 .secureNote {
   text-align: center;
   font-size: 12px;
   color: var(--text-muted);
-  margin-top: 16px;
+  margin-top: 14px;
+}
+
+/* NEW: Subscription Note */
+.subscriptionNote {
+  text-align: center;
+  font-size: 12px;
+  color: var(--text-muted);
+  margin-top: 8px;
+}
+
+/* Animations */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+  .pricingTimeline {
+    gap: 12px;
+    padding: 16px;
+  }
+
+  .timelinePrice {
+    font-size: 16px;
+  }
+}
+
+@media (max-width: 768px) {
+  .pricingTimeline {
+    flex-direction: column;
+    gap: 8px;
+  }
+
+  .timelineArrow {
+    transform: rotate(90deg);
+    margin: -4px 0;
+  }
+
+  .countdown {
+    gap: 8px;
+  }
+
+  .countdownValue {
+    font-size: 18px;
+  }
+
+  .countdownItem {
+    padding: 8px;
+  }
+
+  .formCard {
+    padding: 28px 20px;
+  }
+
+  .amountDisplayValue {
+    font-size: 24px;
+  }
+
+  .submitBtn {
+    padding: 11px 16px;
+    font-size: 13px;
+  }
+}
+
+@media (max-width: 480px) {
+  .pricingTimeline {
+    padding: 14px;
+    gap: 6px;
+  }
+
+  .timelineItem {
+    padding: 8px;
+    gap: 8px;
+  }
+
+  .timelinePrice {
+    font-size: 14px;
+  }
+
+  .countdown {
+    gap: 6px;
+  }
+
+  .countdownItem {
+    padding: 6px;
+  }
+
+  .countdownValue {
+    font-size: 16px;
+  }
+
+  .countdownUnit {
+    font-size: 9px;
+  }
+
+  .formCard {
+    padding: 20px 16px;
+  }
+
+  .formTitle {
+    font-size: 18px;
+  }
+
+  .amountDisplayValue {
+    font-size: 22px;
+  }
 }
