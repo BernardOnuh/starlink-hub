@@ -16,7 +16,7 @@ export default function Home() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState("");
   const [timeLeft, setTimeLeft] = useState<TimeLeft>({ text: "", expired: false });
-  const [currentPrice, setCurrentPrice] = useState(5000);
+  const [currentPrice, setCurrentPrice] = useState(7000);
   const [isPriceIncreased, setIsPriceIncreased] = useState(false);
   const [focused, setFocused] = useState<string | null>(null);
   const canvasRef = useRef<HTMLCanvasElement>(null);
@@ -77,7 +77,7 @@ export default function Home() {
         setTimeLeft({ text: "Price has increased", expired: true });
       } else {
         setIsPriceIncreased(false);
-        setCurrentPrice(5000);
+        setCurrentPrice(7000);
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((distance / 1000 / 60) % 60);
@@ -175,11 +175,11 @@ export default function Home() {
 
             {/* Pricing comparison */}
             <div className={styles.pricingBlock}>
-              <div className={`${styles.priceCard} ${currentPrice === 5000 ? styles.priceCardActive : styles.priceCardDim}`}>
+              <div className={`${styles.priceCard} ${currentPrice === 7000 ? styles.priceCardActive : styles.priceCardDim}`}>
                 <div className={styles.priceCardEye}>NOW</div>
                 <div className={styles.priceCardAmount}>₦5,000</div>
                 <div className={styles.priceCardLabel}>Before 10th</div>
-                {currentPrice === 5000 && <div className={styles.priceCardGlow} />}
+                {currentPrice === 7000 && <div className={styles.priceCardGlow} />}
               </div>
               <div className={styles.priceDivider}>
                 <div className={styles.priceDividerLine} />
@@ -188,7 +188,7 @@ export default function Home() {
               </div>
               <div className={`${styles.priceCard} ${currentPrice === 7000 ? styles.priceCardActive : styles.priceCardDim}`}>
                 <div className={styles.priceCardEye}>AFTER</div>
-                <div className={styles.priceCardAmountAlt}>₦7,000</div>
+                <div className={styles.priceCardAmountAlt}>₦5,000</div>
                 <div className={styles.priceCardLabel}>From 10th</div>
               </div>
             </div>
@@ -296,13 +296,13 @@ export default function Home() {
               )}
 
               <button
-                className={`${styles.submitBtn} ${currentPrice === 5000 ? styles.submitPrimary : styles.submitSecondary}`}
+                className={`${styles.submitBtn} ${currentPrice === 7000 ? styles.submitPrimary : styles.submitSecondary}`}
                 onClick={handleSubmit}
                 disabled={loading}
               >
                 {loading ? (
                   <span className={styles.loadingSpinner}>PROCESSING...</span>
-                ) : currentPrice === 5000 ? (
+                ) : currentPrice === 7000 ? (
                   <>LOCK IN AT ₦5,000 <span className={styles.btnArrow}>→</span></>
                 ) : (
                   <>PAY ₦{currentPrice.toLocaleString()} <span className={styles.btnArrow}>→</span></>
