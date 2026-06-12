@@ -1,6 +1,6 @@
 # StarLink Hub – Payment Portal
 
-A full-stack Next.js payment portal for Starlink service & maintenance (₦5,000), powered by **Monnify** and **MongoDB**.
+A full-stack Next.js payment portal for Starlink service & maintenance (₦7,000), powered by **Monnify** and **MongoDB**.
 
 ---
 

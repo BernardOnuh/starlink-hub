@@ -177,7 +177,7 @@ export default function Home() {
             <div className={styles.pricingBlock}>
               <div className={`${styles.priceCard} ${currentPrice === 7000 ? styles.priceCardActive : styles.priceCardDim}`}>
                 <div className={styles.priceCardEye}>NOW</div>
-                <div className={styles.priceCardAmount}>₦5,000</div>
+                <div className={styles.priceCardAmount}>₦7,000</div>
                 <div className={styles.priceCardLabel}>Before 10th</div>
                 {currentPrice === 7000 && <div className={styles.priceCardGlow} />}
               </div>
@@ -188,7 +188,7 @@ export default function Home() {
               </div>
               <div className={`${styles.priceCard} ${currentPrice === 7000 ? styles.priceCardActive : styles.priceCardDim}`}>
                 <div className={styles.priceCardEye}>AFTER</div>
-                <div className={styles.priceCardAmountAlt}>₦5,000</div>
+                <div className={styles.priceCardAmountAlt}>₦7,000</div>
                 <div className={styles.priceCardLabel}>From 10th</div>
               </div>
             </div>
@@ -303,7 +303,7 @@ export default function Home() {
                 {loading ? (
                   <span className={styles.loadingSpinner}>PROCESSING...</span>
                 ) : currentPrice === 7000 ? (
-                  <>LOCK IN AT ₦5,000 <span className={styles.btnArrow}>→</span></>
+                  <>LOCK IN AT ₦7,000 <span className={styles.btnArrow}>→</span></>
                 ) : (
                   <>PAY ₦{currentPrice.toLocaleString()} <span className={styles.btnArrow}>→</span></>
                 )}
