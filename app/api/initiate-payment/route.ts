@@ -18,7 +18,7 @@ export async function POST(req: NextRequest) {
     }
 
     const reference = `SLH-${uuidv4().replace(/-/g, "").slice(0, 12).toUpperCase()}`;
-    const amount = 7000;
+    const amount = 5000;
     const appUrl = process.env.NEXT_PUBLIC_APP_URL || "http://localhost:3000";
 
     // Save pending payment to DB

@@ -31,7 +31,7 @@ export async function initializePayment(payload: {
       customerEmail: payload.customerEmail,
       customerPhone: payload.customerPhone,
       paymentReference: payload.reference,
-      paymentDescription: "Starlink Service & Maintenance - 7,000 NGN",
+      paymentDescription: "Starlink Service & Maintenance - 5,000 NGN",
       currencyCode: "NGN",
       contractCode: process.env.MONNIFY_CONTRACT_CODE,
       redirectUrl: payload.redirectUrl,
