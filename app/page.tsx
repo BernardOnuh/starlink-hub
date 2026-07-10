@@ -65,19 +65,27 @@ export default function Home() {
       const today = new Date();
       const currentDay = today.getDate();
       let targetDate;
-      if (currentDay < 10) {
-        targetDate = new Date(today.getFullYear(), today.getMonth(), 10, 23, 59, 59);
+      let price;
+
+      if (currentDay < 13) {
+        targetDate = new Date(today.getFullYear(), today.getMonth(), 13, 23, 59, 59);
+        price = 5000;
+      } else if (currentDay < 19) {
+        targetDate = new Date(today.getFullYear(), today.getMonth(), 19, 23, 59, 59);
+        price = 7000;
       } else {
-        targetDate = new Date(today.getFullYear(), today.getMonth() + 1, 10, 23, 59, 59);
+        targetDate = new Date(today.getFullYear(), today.getMonth() + 1, 13, 23, 59, 59);
+        price = 8000;
       }
+
       const distance = targetDate.getTime() - new Date().getTime();
       if (distance < 0) {
         setIsPriceIncreased(true);
-        setCurrentPrice(5000);
+        setCurrentPrice(price);
         setTimeLeft({ text: "Price has increased", expired: true });
       } else {
         setIsPriceIncreased(false);
-        setCurrentPrice(5000);
+        setCurrentPrice(price);
         const days = Math.floor(distance / (1000 * 60 * 60 * 24));
         const hours = Math.floor((distance / (1000 * 60 * 60)) % 24);
         const minutes = Math.floor((distance / 1000 / 60) % 60);
@@ -118,6 +126,10 @@ export default function Home() {
   };
 
   const pad = (n: number) => String(n).padStart(2, "0");
+  const today = new Date();
+  const currentDay = today.getDate();
+  const nextPrice = currentDay < 13 ? 7000 : 8000;
+  const nextLabel = currentDay < 13 ? "From 13th" : "From 19th";
 
   return (
     <main className={styles.main}>
@@ -170,15 +182,15 @@ export default function Home() {
 
             <p className={styles.subtext}>
               High-speed satellite internet with zero ground infrastructure.
-              Lock in the early rate before the 10th — prices increase after.
+               Lock in the early rate — prices increase on the 13th and 19th.
             </p>
 
             {/* Pricing comparison */}
             <div className={styles.pricingBlock}>
               <div className={`${styles.priceCard} ${currentPrice === 5000 ? styles.priceCardActive : styles.priceCardDim}`}>
                 <div className={styles.priceCardEye}>NOW</div>
-                <div className={styles.priceCardAmount}>₦5,000</div>
-                <div className={styles.priceCardLabel}>Before 10th</div>
+                <div className={styles.priceCardAmount}>₦{currentPrice.toLocaleString()}</div>
+                <div className={styles.priceCardLabel}>{currentPrice === 5000 ? "Before 13th" : "Current Rate"}</div>
                 {currentPrice === 5000 && <div className={styles.priceCardGlow} />}
               </div>
               <div className={styles.priceDivider}>
@@ -186,10 +198,10 @@ export default function Home() {
                 <div className={styles.priceDividerArrow}>→</div>
                 <div className={styles.priceDividerLine} />
               </div>
-              <div className={`${styles.priceCard} ${currentPrice === 5000 ? styles.priceCardActive : styles.priceCardDim}`}>
-                <div className={styles.priceCardEye}>AFTER</div>
-                <div className={styles.priceCardAmountAlt}>₦5,000</div>
-                <div className={styles.priceCardLabel}>From 10th</div>
+              <div className={`${styles.priceCard} ${currentPrice > 5000 ? styles.priceCardActive : styles.priceCardDim}`}>
+                <div className={styles.priceCardEye}>NEXT</div>
+                <div className={styles.priceCardAmountAlt}>₦{nextPrice.toLocaleString()}</div>
+                <div className={styles.priceCardLabel}>{nextLabel}</div>
               </div>
             </div>
 
@@ -233,7 +245,7 @@ export default function Home() {
             </div>
 
             <div className={styles.savingsTag}>
-              ▲ SAVE ₦2,000/MONTH — ACT BEFORE THE 10TH
+              ▲ SAVE ₦2,000/MONTH — ACT BEFORE THE 13TH
             </div>
           </div>
 
@@ -296,7 +308,7 @@ export default function Home() {
               )}
 
               <button
-                className={`${styles.submitBtn} ${currentPrice === 5000 ? styles.submitPrimary : styles.submitSecondary}`}
+                className={`${styles.submitBtn} ${currentPrice <= 5000 ? styles.submitPrimary : styles.submitSecondary}`}
                 onClick={handleSubmit}
                 disabled={loading}
               >
@@ -304,8 +316,10 @@ export default function Home() {
                   <span className={styles.loadingSpinner}>PROCESSING...</span>
                 ) : currentPrice === 5000 ? (
                   <>LOCK IN AT ₦5,000 <span className={styles.btnArrow}>→</span></>
+                ) : currentPrice === 7000 ? (
+                  <>PAY ₦7,000 <span className={styles.btnArrow}>→</span></>
                 ) : (
-                  <>PAY ₦{currentPrice.toLocaleString()} <span className={styles.btnArrow}>→</span></>
+                  <>PAY ₦8,000 <span className={styles.btnArrow}>→</span></>
                 )}
                 <div className={styles.btnShine} />
               </button>
